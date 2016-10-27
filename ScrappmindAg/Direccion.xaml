@@ -1,0 +1,23 @@
+﻿<Window x:Name="Direccion" x:Class="ScrappmindAg.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScrappmindAg"
+        mc:Ignorable="d"
+        Title="Dirección" Height="346.524" Width="704.278">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="1"/>
+            <GradientStop Color="#FF4B6EA2" Offset="0.413"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Label x:Name="label" Content="Código" HorizontalAlignment="Left" Margin="68,55,0,0" VerticalAlignment="Top" Height="34" Width="67" FontWeight="Bold" FontSize="16" Background="Transparent" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <Label x:Name="label_Copy" Content="Dirección" HorizontalAlignment="Left" Margin="307,55,0,0" VerticalAlignment="Top" Height="34" Width="86" FontWeight="Bold" FontSize="16" Background="Transparent" Foreground="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        <TextBox x:Name="txtcodigo" HorizontalAlignment="Left" Height="23" Margin="47,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtdireccion" HorizontalAlignment="Left" Height="23" Margin="307,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnGuardar" Content="Guardar" HorizontalAlignment="Left" Margin="531,109,0,0" VerticalAlignment="Top" Width="75" Click="btnGuardar_Click"/>
+
+    </Grid>
+</Window>
