@@ -58,82 +58,86 @@ namespace ScrappmindAg
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            String Registraduria = "https://wsp.registraduria.gov.co/censo/_censoResultado.php";
-
-            
-            (Host.Child as System.Windows.Forms.WebBrowser).Navigate(Registraduria);
-            (Host.Child as System.Windows.Forms.WebBrowser).ScriptErrorsSuppressed = true;
-
-            ESPERA(4000);
-
-            string cedula="1035417284";
-           
-
-            (Host.Child as System.Windows.Forms.WebBrowser).Document.GetElementById("nCedula").InnerText = cedula;
-            foreach (HtmlElement node2 in (Host.Child as System.Windows.Forms.WebBrowser).Document.GetElementsByTagName("input"))
+            for (int j = 1; j <= 5; j++)
             {
-               if (node2.GetAttribute("value").Equals("Consultar"))
+                
+
+                String Registraduria = "https://wsp.registraduria.gov.co/censo/_censoResultado.php";
+
+
+                (Host.Child as System.Windows.Forms.WebBrowser).Navigate(Registraduria);
+                (Host.Child as System.Windows.Forms.WebBrowser).ScriptErrorsSuppressed = true;
+
+                ESPERA(4000);
+
+                string cedula = "1035417284";
+
+
+                (Host.Child as System.Windows.Forms.WebBrowser).Document.GetElementById("nCedula").InnerText = cedula;
+                foreach (HtmlElement node2 in (Host.Child as System.Windows.Forms.WebBrowser).Document.GetElementsByTagName("input"))
                 {
-                   node2.InvokeMember("Click");
+                    if (node2.GetAttribute("value").Equals("Consultar"))
+                    {
+                        node2.InvokeMember("Click");
+                    }
                 }
-            }
 
-            // string Registraduria = @"http://registraduria.org/censo.php";
-            //System.Net.WebClient wc = new System.Net.WebClient();
-            //HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-            //doc.Load((Host.Child as System.Windows.Forms.WebBrowser).DocumentStream, System.Text.Encoding.GetEncoding("ISO-8859-1"));
-            //doc.GetElementbyId("ncedula").InnerHtml = "1035417284";
+                // string Registraduria = @"http://registraduria.org/censo.php";
+                //System.Net.WebClient wc = new System.Net.WebClient();
+                //HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+                //doc.Load((Host.Child as System.Windows.Forms.WebBrowser).DocumentStream, System.Text.Encoding.GetEncoding("ISO-8859-1"));
+                //doc.GetElementbyId("ncedula").InnerHtml = "1035417284";
 
-            //doc.Load((Host.Child as System.Windows.Forms.WebBrowser).DocumentStream, System.Text.Encoding.GetEncoding("ISO-8859-1"));
-            //HtmlNodeCollection tabla = doc.DocumentNode.SelectNodes(@"//span[@id='numcedula']");
-            //ESPERA(4000);
-            //textBox.Text = tabla[0].InnerText;
-            //ESPERA(4000);
-            //doc.Load((Host.Child as System.Windows.Forms.WebBrowser).DocumentStream, System.Text.Encoding.GetEncoding("ISO-8859-1"));
-            ESPERA(4000);
-            string departamento;
-            string municipio;
-            string puesto;
-            string dirpuesto;
-            string fecha;
-            string mesa;
-            string[] palabras = new string[12];
-            int i = 0;
+                //doc.Load((Host.Child as System.Windows.Forms.WebBrowser).DocumentStream, System.Text.Encoding.GetEncoding("ISO-8859-1"));
+                //HtmlNodeCollection tabla = doc.DocumentNode.SelectNodes(@"//span[@id='numcedula']");
+                //ESPERA(4000);
+                //textBox.Text = tabla[0].InnerText;
+                //ESPERA(4000);
+                //doc.Load((Host.Child as System.Windows.Forms.WebBrowser).DocumentStream, System.Text.Encoding.GetEncoding("ISO-8859-1"));
+                ESPERA(4000);
+                string departamento;
+                string municipio;
+                string puesto;
+                string dirpuesto;
+                string fecha;
+                string mesa;
+                string[] palabras = new string[12];
+                int i = 0;
                 foreach (HtmlElement node1 in (Host.Child as System.Windows.Forms.WebBrowser).Document.GetElementsByTagName("td"))
                 {
-                palabras[i]= node1.InnerText;
+                    palabras[i] = node1.InnerText;
+                    departamento = palabras[1];
+                    municipio = palabras[3];
+                    puesto = palabras[5];
+                    dirpuesto = palabras[7];
+                    fecha = palabras[9];
+                    mesa = palabras[11];
+
+                    i++;
+                }
                 departamento = palabras[1];
                 municipio = palabras[3];
                 puesto = palabras[5];
                 dirpuesto = palabras[7];
                 fecha = palabras[9];
                 mesa = palabras[11];
-               
-                i++;     
-                }
-            departamento = palabras[1];
-            municipio = palabras[3];
-            puesto = palabras[5];
-            dirpuesto = palabras[7];
-            fecha = palabras[9];
-            mesa = palabras[11];
-           
 
-            DTOadministrador adm = new DTOadministrador();
-            adm.Cedula = cedula;
-            adm.Departamento = departamento;
-            adm.Municipio = municipio;
-            adm.Puesto = puesto;
-            adm.Dirpuesto = dirpuesto;
-            adm.Fecha = fecha;
-            adm.Mesa = mesa;
-   
-            CADAdministrador datocamp = new CADAdministrador();
-            datocamp.guardarCampos(adm);
+
+                DTOadministrador adm = new DTOadministrador();
+                adm.Cedula = cedula;
+                adm.Departamento = departamento;
+                adm.Municipio = municipio;
+                adm.Puesto = puesto;
+                adm.Dirpuesto = dirpuesto;
+                adm.Fecha = fecha;
+                adm.Mesa = mesa;
+
+                CADAdministrador datocamp = new CADAdministrador();
+                datocamp.guardarCampos(adm);
+
+            }
 
         }
-
-       
 
         
 
