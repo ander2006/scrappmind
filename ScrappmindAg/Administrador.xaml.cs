@@ -28,7 +28,7 @@ namespace ScrappmindAg
     /// </summary>
     public partial class Administrador : Window
     {
-       
+
 
         public Administrador()
         {
@@ -58,9 +58,26 @@ namespace ScrappmindAg
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            for (int j = 1; j <= 5; j++)
+
+
+
+            int counter = 0;
+            string line;
+            string[] datos = new string[5];
+
+            // Read the file and display it line by line.
+            System.IO.StreamReader file =
+            new System.IO.StreamReader(@"c:\test.txt");
+
+
+            while ((line = file.ReadLine()) != null)
             {
-                
+
+
+
+
+
+
 
                 String Registraduria = "https://wsp.registraduria.gov.co/censo/_censoResultado.php";
 
@@ -70,7 +87,7 @@ namespace ScrappmindAg
 
                 ESPERA(4000);
 
-                string cedula = "1035417284";
+                string cedula = line;
 
 
                 (Host.Child as System.Windows.Forms.WebBrowser).Document.GetElementById("nCedula").InnerText = cedula;
@@ -140,21 +157,21 @@ namespace ScrappmindAg
         }
 
         
-
-
-
-
+    }
     
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            string Registraduria = @"http://www3.registraduria.gov.co/censo/_censoresultado.php?";
-            System.Net.WebClient wc = new System.Net.WebClient();
-            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-            doc.Load(wc.OpenRead(Registraduria), System.Text.Encoding.GetEncoding("ISO-8859-1"));
-            HtmlNodeCollection tabla = doc.DocumentNode.SelectNodes(@"//ul[@id='aviso']");
-            textBox.Text = tabla[0].InnerText; 
+}
+
+
+
+    //private void button1_Click(object sender, RoutedEventArgs e)
+    //    {
+    //        //string Registraduria = @"http://www3.registraduria.gov.co/censo/_censoresultado.php?";
+    //        //System.Net.WebClient wc = new System.Net.WebClient();
+    //        //HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+    //        //doc.Load(wc.OpenRead(Registraduria), System.Text.Encoding.GetEncoding("ISO-8859-1"));
+    //        //HtmlNodeCollection tabla = doc.DocumentNode.SelectNodes(@"//ul[@id='aviso']");
+    //        //textBox.Text = tabla[0].InnerText; 
 
            
-        }
-    }
-}
+        
+    
