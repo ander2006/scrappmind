@@ -18,6 +18,8 @@ using mshtml;
 using System.Xml;
 using System.Threading;
 using System.Diagnostics;
+using DTO;
+using CAD;
 
 namespace ScrappmindAg
 {
@@ -64,9 +66,10 @@ namespace ScrappmindAg
 
             ESPERA(4000);
 
+            string cedula="1035417284";
            
 
-            (Host.Child as System.Windows.Forms.WebBrowser).Document.GetElementById("nCedula").InnerText = "1035417284";
+            (Host.Child as System.Windows.Forms.WebBrowser).Document.GetElementById("nCedula").InnerText = cedula;
             foreach (HtmlElement node2 in (Host.Child as System.Windows.Forms.WebBrowser).Document.GetElementsByTagName("input"))
             {
                if (node2.GetAttribute("value").Equals("Consultar"))
@@ -88,19 +91,45 @@ namespace ScrappmindAg
             //ESPERA(4000);
             //doc.Load((Host.Child as System.Windows.Forms.WebBrowser).DocumentStream, System.Text.Encoding.GetEncoding("ISO-8859-1"));
             ESPERA(4000);
+            string departamento;
+            string municipio;
+            string puesto;
+            string dirpuesto;
+            string fecha;
+            string mesa;
             string[] palabras = new string[12];
             int i = 0;
                 foreach (HtmlElement node1 in (Host.Child as System.Windows.Forms.WebBrowser).Document.GetElementsByTagName("td"))
                 {
                 palabras[i]= node1.InnerText;
-                textBox.Text = node1.InnerText;
-                i++;
+                departamento = palabras[1];
+                municipio = palabras[3];
+                puesto = palabras[5];
+                dirpuesto = palabras[7];
+                fecha = palabras[9];
+                mesa = palabras[11];
+               
+                i++;     
                 }
-            foreach (string x in palabras)
-            {
-                textBox.Text = String.Join(" ", palabras);
+            departamento = palabras[1];
+            municipio = palabras[3];
+            puesto = palabras[5];
+            dirpuesto = palabras[7];
+            fecha = palabras[9];
+            mesa = palabras[11];
+           
 
-            }
+            DTOadministrador adm = new DTOadministrador();
+            adm.Cedula = cedula;
+            adm.Departamento = departamento;
+            adm.Municipio = municipio;
+            adm.Puesto = puesto;
+            adm.Dirpuesto = dirpuesto;
+            adm.Fecha = fecha;
+            adm.Mesa = mesa;
+   
+            CADAdministrador datocamp = new CADAdministrador();
+            datocamp.guardarCampos(adm);
 
         }
 
