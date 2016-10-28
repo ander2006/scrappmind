@@ -21,7 +21,7 @@ namespace CAD
         {
             SqlCommand cmd = new SqlCommand(); // sentencias sql
             cmd.Connection = con;
-            cmd.CommandText = "prc_Guardarcampos";
+            cmd.CommandText = "prc_Guardarcamposreg";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@cedula", adm.Cedula);
             cmd.Parameters.AddWithValue("@departamento", adm.Departamento);
@@ -30,6 +30,8 @@ namespace CAD
             cmd.Parameters.AddWithValue("@dirpuesto", adm.Dirpuesto);
             cmd.Parameters.AddWithValue("@fecha", adm.Fecha);
             cmd.Parameters.AddWithValue("@mesa", adm.Mesa);
+           
+
             con.Open();
 
 
