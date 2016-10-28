@@ -14,18 +14,16 @@
                 <GradientStop Color="#FF2971BB"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button x:Name="button" Content=""  HorizontalAlignment="Left" Margin="51,30,0,0" VerticalAlignment="Top" Width="73" Height="67" Click="button_Click">
+        <Button x:Name="button" Content=""  HorizontalAlignment="Left" Margin="102,101,0,0" VerticalAlignment="Top" Width="73" Height="67" Click="button_Click">
             <Button.Background>
                 <ImageBrush ImageSource="image/registraduria.jpg"/>
             </Button.Background>
         </Button>
-        <WindowsFormsHost x:Name="Host" HorizontalAlignment="Left" Height="325" Margin="413,10,0,0" VerticalAlignment="Top" Width="278">
+        <WindowsFormsHost x:Name="Host" HorizontalAlignment="Left" Height="325" Margin="273,10,0,0" VerticalAlignment="Top" Width="418">
             <WindowsFormsHost.Child>
                 <wf:WebBrowser Name="WebBrowser" />
             </WindowsFormsHost.Child>
 
         </WindowsFormsHost>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="148" Margin="28,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="41" Margin="212,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="95"/>
     </Grid>
 </Window>

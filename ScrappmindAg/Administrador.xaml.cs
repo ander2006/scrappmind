@@ -85,7 +85,7 @@ namespace ScrappmindAg
                 (Host.Child as System.Windows.Forms.WebBrowser).Navigate(Registraduria);
                 (Host.Child as System.Windows.Forms.WebBrowser).ScriptErrorsSuppressed = true;
 
-                ESPERA(4000);
+                ESPERA(3000);
 
                 string cedula = line;
 
@@ -133,12 +133,36 @@ namespace ScrappmindAg
                     i++;
                 }
                 departamento = palabras[1];
+                if (departamento == null)
+                {
+                    departamento = "vacio";
+                }
                 municipio = palabras[3];
-                puesto = palabras[5];
-                dirpuesto = palabras[7];
-                fecha = palabras[9];
-                mesa = palabras[11];
 
+                if (municipio == null)
+                {
+                    municipio = "vacio";
+                }
+                puesto = palabras[5];
+                if (puesto == null)
+                {
+                    puesto = "vacio";
+                }
+                dirpuesto = palabras[7];
+                if (dirpuesto == null)
+                {
+                    dirpuesto = "vacio";
+                }
+                fecha = palabras[9];
+                if (fecha == null)
+                {
+                    fecha = "vacio";
+                }
+                mesa = palabras[11];
+                if (mesa == null)
+                {
+                    mesa = "vacio";
+                }
 
                 DTOadministrador adm = new DTOadministrador();
                 adm.Cedula = cedula;

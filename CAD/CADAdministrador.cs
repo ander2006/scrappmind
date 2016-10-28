@@ -25,12 +25,13 @@ namespace CAD
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@cedula", adm.Cedula);
             cmd.Parameters.AddWithValue("@departamento", adm.Departamento);
+            
             cmd.Parameters.AddWithValue("@municipio", adm.Municipio);
             cmd.Parameters.AddWithValue("@puesto", adm.Puesto);
             cmd.Parameters.AddWithValue("@dirpuesto", adm.Dirpuesto);
             cmd.Parameters.AddWithValue("@fecha", adm.Fecha);
             cmd.Parameters.AddWithValue("@mesa", adm.Mesa);
-           
+            
 
             con.Open();
 
