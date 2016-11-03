@@ -5,25 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScrappmindAg"
         xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:cr="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer"
         
-        Title="Administrador" Height="402.762" Width="714.364">
-    <Grid>
+        Title="Administrador" Height="577.762" Width="667.364">
+    <Grid Margin="0,0,2,0" RenderTransformOrigin="0.499,0.584">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="223*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+
+
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="1"/>
                 <GradientStop Color="#FF2971BB"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button x:Name="button" Content=""  HorizontalAlignment="Left" Margin="102,101,0,0" VerticalAlignment="Top" Width="73" Height="67" Click="button_Click">
+        <Button x:Name="button" Content=""  HorizontalAlignment="Left" Margin="47,108,0,0" VerticalAlignment="Top" Width="73" Height="67" Click="button_Click" Grid.ColumnSpan="2">
             <Button.Background>
                 <ImageBrush ImageSource="image/registraduria.jpg"/>
             </Button.Background>
         </Button>
-        <WindowsFormsHost x:Name="Host" HorizontalAlignment="Left" Height="325" Margin="273,10,0,0" VerticalAlignment="Top" Width="418">
+        <WindowsFormsHost x:Name="Host" HorizontalAlignment="Left" Height="325" Margin="54,27,0,0" VerticalAlignment="Top" Width="418" Grid.Column="1">
             <WindowsFormsHost.Child>
                 <wf:WebBrowser Name="WebBrowser" />
             </WindowsFormsHost.Child>
 
         </WindowsFormsHost>
+        <Button x:Name="button1" Grid.ColumnSpan="2" Content="Button" HorizontalAlignment="Left" Margin="61,59,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
     </Grid>
 </Window>

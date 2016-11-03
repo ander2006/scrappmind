@@ -20,6 +20,11 @@ using System.Threading;
 using System.Diagnostics;
 using DTO;
 using CAD;
+using System.Data.SqlClient;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
+using SAPBusinessObjects.WPF.Viewer;
+using System.Windows.Media.Media3D;
 
 namespace ScrappmindAg
 {
@@ -61,7 +66,7 @@ namespace ScrappmindAg
 
 
 
-            int counter = 0;
+           
             string line;
             string[] datos = new string[5];
 
@@ -85,7 +90,7 @@ namespace ScrappmindAg
                 (Host.Child as System.Windows.Forms.WebBrowser).Navigate(Registraduria);
                 (Host.Child as System.Windows.Forms.WebBrowser).ScriptErrorsSuppressed = true;
 
-                ESPERA(3000);
+                ESPERA(4000);
 
                 string cedula = line;
 
@@ -135,33 +140,33 @@ namespace ScrappmindAg
                 departamento = palabras[1];
                 if (departamento == null)
                 {
-                    departamento = "vacio";
+                    departamento = "No Aplica";
                 }
                 municipio = palabras[3];
 
                 if (municipio == null)
                 {
-                    municipio = "vacio";
+                    municipio = "No Aplica";
                 }
                 puesto = palabras[5];
                 if (puesto == null)
                 {
-                    puesto = "vacio";
+                    puesto = "No Aplica";
                 }
                 dirpuesto = palabras[7];
                 if (dirpuesto == null)
                 {
-                    dirpuesto = "vacio";
+                    dirpuesto = "No Aplica";
                 }
                 fecha = palabras[9];
                 if (fecha == null)
                 {
-                    fecha = "vacio";
+                    fecha = "No Aplica";
                 }
                 mesa = palabras[11];
                 if (mesa == null)
                 {
-                    mesa = "vacio";
+                    mesa = "No Aplica";
                 }
 
                 DTOadministrador adm = new DTOadministrador();
@@ -180,10 +185,17 @@ namespace ScrappmindAg
 
         }
 
-        
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Reporte ventana = new Reporte();
+            
+            ventana.Show();
+        }
     }
-    
-}
+    }
+
+
 
 
 
@@ -199,3 +211,4 @@ namespace ScrappmindAg
            
         
     
+   
