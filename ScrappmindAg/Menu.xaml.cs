@@ -10,25 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Behaviours;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace ScrappmindAg
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Lógica de interacción para Menu.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class Menu : MetroWindow
     {
-        public MainWindow()
+        public Menu()
         {
             InitializeComponent();
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

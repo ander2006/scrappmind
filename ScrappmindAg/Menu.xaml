@@ -1,0 +1,22 @@
+﻿<Controls:MetroWindow  x:Class="ScrappmindAg.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScrappmindAg"
+        xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="Menu" Height="334" Width="508">
+    <Grid ClipToBounds="True" Margin="0,0,2,3">
+        <Controls:Tile Height="Auto" Margin="27,57,373,58" Width="Auto" Title="Usuarios" TitleFontSize="12" >
+            <Image Source="image\User-Profile.png" Width="72" Height="73"/>
+        </Controls:Tile>
+        <Controls:Tile Height="Auto" Margin="161,102,153,122" Width="Auto" Title="Scrappear" TitleFontSize="12" >
+            <Image Source="image\Business-Man-Find 02.png" Width="72" Height="73"/>
+        </Controls:Tile>
+        <Controls:Tile Height="Auto" Margin="377,57,23,58" Width="Auto" Title="Informes" TitleFontSize="12" >
+            <Image Source="image\Note-Information.png" Width="72" Height="73"/>
+        </Controls:Tile>
+    </Grid>
+</Controls:MetroWindow>

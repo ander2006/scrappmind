@@ -25,13 +25,15 @@ using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using SAPBusinessObjects.WPF.Viewer;
 using System.Windows.Media.Media3D;
-
+using MahApps.Metro.Controls;
+using MahApps.Metro.Behaviours;
+using MahApps.Metro.Controls.Dialogs;
 namespace ScrappmindAg
 {
     /// <summary>
     /// Interaction logic for Administrador.xaml
     /// </summary>
-    public partial class Administrador : Window
+    public partial class Administrador : MetroWindow
     {
 
 
@@ -191,6 +193,11 @@ namespace ScrappmindAg
             Reporte ventana = new Reporte();
             
             ventana.Show();
+        }
+
+        private void MenuItem_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+
         }
     }
     }
