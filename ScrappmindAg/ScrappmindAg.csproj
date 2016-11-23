@@ -123,6 +123,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
@@ -182,6 +183,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ScrappmindDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios.xaml.cs">
+      <DependentUpon>Usuarios.xaml</DependentUpon>
+    </Compile>
     <Page Include="Administrador.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -216,6 +220,10 @@
     <Page Include="Resources\IconsNonShared.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Usuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -311,6 +319,14 @@
   <ItemGroup>
     <Resource Include="image\Business-Man-Find 02.png" />
     <Resource Include="image\Note-Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\User-Add.png" />
+    <Resource Include="image\User-Delete.png" />
+    <Resource Include="image\User-Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="image\Group-Add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
