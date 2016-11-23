@@ -18,10 +18,10 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image x:Name="image" Source="Scraapmind.PNG " HorizontalAlignment="Left" Height="39" Margin="140,36,0,0" VerticalAlignment="Top" Width="152"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="87,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Usuario"/>
+        <TextBox x:Name="txtUsuario" HorizontalAlignment="Left" Height="23" Margin="87,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="249" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Usuario"/>
         <Image x:Name="image1" HorizontalAlignment="Left" Source="image\header.jpg" Height="100" Margin="10,0,-109,0" VerticalAlignment="Top" Width="520" Opacity="0.1"/>
-        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="87,185,0,0" VerticalAlignment="Top" Width="249" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Contraseña"/>
-        <Button x:Name="button" Content="Ingresar" HorizontalAlignment="Left" Margin="87,248,0,0" VerticalAlignment="Top" Width="249"/>
+        <TextBox x:Name="txtContrasena" HorizontalAlignment="Left" Margin="87,185,0,0" VerticalAlignment="Top" Width="249" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Contraseña"/>
+        <Button x:Name="btnIngresar" Content="Ingresar" HorizontalAlignment="Left" Margin="87,248,0,0" VerticalAlignment="Top" Width="249" Click="btnIngresar_Click"/>
 
     </Grid>
 </Controls:MetroWindow>

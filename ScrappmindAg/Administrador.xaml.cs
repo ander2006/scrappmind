@@ -59,16 +59,18 @@ namespace ScrappmindAg
         }
 
 
-
-
-
-
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void button1_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
+            Reporte ventana = new Reporte();
+            
+            ventana.Show();
+        }
 
+       
 
-
-           
+        private void btnRegistraduria_Click(object sender, RoutedEventArgs e)
+        {
             string line;
             string[] datos = new string[5];
 
@@ -184,20 +186,14 @@ namespace ScrappmindAg
                 datocamp.guardarCampos(adm);
 
             }
-
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
+        private void btnregresar_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            Reporte ventana = new Reporte();
-            
+            Menu ventana = new Menu();
+
             ventana.Show();
-        }
-
-        private void MenuItem_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-
         }
     }
     }

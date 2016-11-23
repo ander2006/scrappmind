@@ -9,7 +9,8 @@
         mc:Ignorable="d"
         Title="Usuarios" Height="555" Width="1024" Loaded="MetroWindow_Loaded">
     <Grid ClipToBounds="True" Margin="0,0,2,3">
-        <DataGrid x:Name="dataGrid" ItemsSource="{Binding Path=Albums}" Margin="402,66,0,0"
+
+        <DataGrid x:Name="dataGrid" ItemsSource="{Binding Path=Albums}" Margin="402,111,0,-45"
                   AutoGenerateColumns="True"
                   Style="{StaticResource AzureDataGrid}" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="455" Width="602" BorderBrush="{x:Null}" Foreground="White" GridLinesVisibility="All" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="Black" HeadersVisibility="All" Background="{x:Null}" >
             <DataGrid.Columns>
@@ -33,6 +34,11 @@
         <Controls:Tile Height="Auto" Margin="27,376,723,30" Width="Auto" Title="Listar Usuario" TitleFontSize="12" Click="Tile_Click" >
             <Image Source="image/Group-Add.png" Width="72" Height="73"/>
         </Controls:Tile>
+        <Controls:Tile Height="Auto" Margin="896,20,49,437" Width="Auto" Title="Volver" TitleFontSize="12" Click="Tile_Click_2" >
+            <Image Source="image/In.png" Width="48" Height="54"/>
+        </Controls:Tile>
+
+
         <Controls:Flyout x:Name="Flyoutusuario" Width="320" Header="Registrar Usuario">
             <Canvas>
                 <Image Source="image/User-Add.png" Canvas.Left="92" Canvas.Top="10" Height="112" Width="115"></Image>
@@ -48,5 +54,7 @@
                 <SolidColorBrush Color="#FF2B2B2B" Opacity="0.9"/>
             </Controls:Flyout.Background>
         </Controls:Flyout>
+
+
     </Grid>
 </Controls:MetroWindow>

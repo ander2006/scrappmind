@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CADAdministrador.cs" />
     <Compile Include="CADDireccion.cs" />
+    <Compile Include="CADUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

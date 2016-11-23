@@ -93,5 +93,13 @@ namespace ScrappmindAg
         {
             Flyoutusuario.IsOpen = true;
         }
+
+        private void Tile_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Menu ventana = new Menu();
+
+            ventana.Show();
+        }
     }
 }

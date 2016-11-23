@@ -9,13 +9,13 @@
         mc:Ignorable="d"
         Title="Menu" Height="555" Width="1024">
     <Grid ClipToBounds="True" Margin="0,0,2,3">
-        <Controls:Tile Height="Auto" Margin="20,57,811,58" Width="Auto" Title="Usuarios" TitleFontSize="12" >
+        <Controls:Tile Height="Auto" Margin="20,57,811,58" Width="Auto" Title="Usuarios" TitleFontSize="12" Click="Tile_Click" >
             <Image Source="image\User-Profile.png" Width="72" Height="73"/>
         </Controls:Tile>
-        <Controls:Tile Height="Auto" Margin="289,57,410,339" Width="Auto" Title="Scrappear" TitleFontSize="12" >
+        <Controls:Tile Height="Auto" Margin="289,57,410,339" Width="Auto" Title="Scrappear" TitleFontSize="12" Click="Tile_Click_1" >
             <Image Source="image\Business-Man-Find 02.png" Width="72" Height="73"/>
         </Controls:Tile>
-        <Controls:Tile Height="Auto" Margin="289,197,597,198" Width="Auto" Title="Informes" TitleFontSize="12" >
+        <Controls:Tile Height="Auto" Margin="289,197,597,198" Width="Auto" Title="Informes" TitleFontSize="12" Click="Tile_Click_2" >
             <Image Source="image\Note-Information.png" Width="72" Height="73"/>
         </Controls:Tile>
     </Grid>

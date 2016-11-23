@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="DTOadministrador.cs" />
     <Compile Include="DTODireccion.cs" />
+    <Compile Include="DTOUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

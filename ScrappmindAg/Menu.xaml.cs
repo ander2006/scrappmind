@@ -26,5 +26,29 @@ namespace ScrappmindAg
         {
             InitializeComponent();
         }
+
+        private void Tile_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Usuarios ventana = new Usuarios();
+
+            ventana.Show();
+        }
+
+        private void Tile_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Administrador ventana = new Administrador();
+
+            ventana.Show();
+        }
+
+        private void Tile_Click_2(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Reporte ventana = new Reporte();
+
+            ventana.Show();
+        }
     }
 }
