@@ -13,8 +13,8 @@ namespace DTO
         private string cedula;
         private string usuario;
         private string clave;
-        private string administrador;
-        private string operativo;
+        private int administrador;
+        private int operativo;
 
         public string Id
         {
@@ -23,7 +23,7 @@ namespace DTO
             set { codigo = value; }
         }
 
-        public string Nombre
+        public string Cedula
         {
             get { return cedula; }
 
@@ -44,7 +44,7 @@ namespace DTO
             set { clave = value; }
         }
 
-        public string Administrador
+        public int Administrador
         {
             get
             {
@@ -57,7 +57,7 @@ namespace DTO
             }
         }
 
-        public string Operativo
+        public int Operativo
         {
             get
             {

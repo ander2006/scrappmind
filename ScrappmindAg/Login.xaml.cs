@@ -51,6 +51,10 @@ namespace ScrappmindAg
                 ventana.Show();
 
             }
+            else
+            {
+                MessageBox.Show("Usuario o Contraseña Equivocada");
+            }
         }
     }
 }

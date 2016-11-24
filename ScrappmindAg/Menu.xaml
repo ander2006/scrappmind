@@ -7,7 +7,7 @@
         xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Menu" Height="555" Width="1024">
+        Title="Menu" Height="555" Width="1024" WindowStartupLocation="CenterScreen">
     <Grid ClipToBounds="True" Margin="0,0,2,3">
         <Controls:Tile Height="Auto" Margin="20,57,811,58" Width="Auto" Title="Usuarios" TitleFontSize="12" Click="Tile_Click" >
             <Image Source="image\User-Profile.png" Width="72" Height="73"/>

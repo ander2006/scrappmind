@@ -17,6 +17,8 @@ using MahApps.Metro.Controls.Dialogs;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Data;
+using DTO;
+using CAD;
 
 namespace ScrappmindAg
 {
@@ -100,6 +102,42 @@ namespace ScrappmindAg
             Menu ventana = new Menu();
 
             ventana.Show();
+        }
+
+        private void btnRegistrar_Click(object sender, RoutedEventArgs e)
+        {
+            DTOUsuario adm = new DTOUsuario();
+            adm.Cedula = txtCedula.Text;
+            adm.Usuario = txtUsuario.Text;
+            adm.Clave = txtContrasena.Text;
+
+            int valorA;
+
+            if (RadioAdministrador.IsChecked==true)
+            {
+                valorA = 1;
+            }
+            else
+            {
+                valorA = 0;    
+            }
+            adm.Administrador = valorA;
+            int valorP;
+
+            if (Radiooperativo.IsChecked==true)
+            {
+                valorP = 1;
+            }
+            else
+            {
+                valorP = 0;
+            }
+            adm.Operativo = valorP;
+
+            
+           
+            CADUsuario datocamp = new CADUsuario();
+            datocamp.ingresarUsuario(adm);
         }
     }
 }

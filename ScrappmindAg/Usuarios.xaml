@@ -7,7 +7,7 @@
         xmlns:behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Usuarios" Height="555" Width="1024" Loaded="MetroWindow_Loaded">
+        Title="Usuarios" Height="555" Width="1024" Loaded="MetroWindow_Loaded" WindowStartupLocation="CenterScreen">
     <Grid ClipToBounds="True" Margin="0,0,2,3">
 
         <DataGrid x:Name="dataGrid" ItemsSource="{Binding Path=Albums}" Margin="402,111,0,-45"
@@ -42,12 +42,12 @@
         <Controls:Flyout x:Name="Flyoutusuario" Width="320" Header="Registrar Usuario">
             <Canvas>
                 <Image Source="image/User-Add.png" Canvas.Left="92" Canvas.Top="10" Height="112" Width="115"></Image>
-                <TextBox x:Name="textBox" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese usuario" Height="23" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="127" Width="229"/>
-                <PasswordBox x:Name="passwordBox" Controls:TextBoxHelper.ClearTextButton="True"  Controls:TextBoxHelper.Watermark="Ingrese Contraseña" Canvas.Left="40" Canvas.Top="176" Width="229"/>
-                <TextBox x:Name="textBox_Copy" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Cedula" Height="23" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="224" Width="229"/>
-                <RadioButton x:Name="radioButton" Content="Operativo" Canvas.Left="179" Canvas.Top="271"/>
-                <RadioButton x:Name="radioButton_Copy" Content="Administrador" Canvas.Left="40" Canvas.Top="271"/>
-                <Button x:Name="button" Content="Registrar" Canvas.Left="40" Canvas.Top="321" Width="229"/>
+                <TextBox x:Name="txtUsuario" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese usuario" Height="23" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="127" Width="229"/>
+                <TextBox x:Name="txtContrasena" Controls:TextBoxHelper.ClearTextButton="True"  Controls:TextBoxHelper.Watermark="Ingrese Contraseña" Canvas.Left="40" Canvas.Top="176" Width="229"/>
+                <TextBox x:Name="txtCedula" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Cedula" Height="23" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="224" Width="229"/>
+                <RadioButton x:Name="Radiooperativo" Content="Operativo" Canvas.Left="179" Canvas.Top="271"/>
+                <RadioButton x:Name="RadioAdministrador" Content="Administrador" Canvas.Left="40" Canvas.Top="271"/>
+                <Button x:Name="btnRegistrar" Content="Registrar" Canvas.Left="40" Canvas.Top="321" Width="229" Click="btnRegistrar_Click"/>
 
             </Canvas>
             <Controls:Flyout.Background>

@@ -40,6 +40,30 @@ namespace CAD
             }
             return dt;
         }
+
+        public void ingresarUsuario(DTOUsuario user) {
+            SqlCommand cmd = new SqlCommand(); // sentencias sql
+            cmd.Connection = con;
+            cmd.CommandText = "prc_InsertarUsuario";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@cedula", user.Cedula);
+            cmd.Parameters.AddWithValue("@usuario", user.Usuario);
+            cmd.Parameters.AddWithValue("@contrasena", user.Clave);
+            cmd.Parameters.AddWithValue("@administrador", user.Administrador);
+            cmd.Parameters.AddWithValue("@operativo", user.Operativo);
+            
+
+
+            con.Open();
+
+
+            cmd.ExecuteNonQuery();
+            //cerrar conexiòn
+            con.Close();
+            //
+
+        }
+
     }
    }
 
