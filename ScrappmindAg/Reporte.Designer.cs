@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.scrappmindDataSet = new ScrappmindAg.ScrappmindDataSet();
-            this.tblcamposregistraduriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tblcampos_registraduriaTableAdapter = new ScrappmindAg.ScrappmindDataSetTableAdapters.tblcampos_registraduriaTableAdapter();
             this.codcedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cedulaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,9 +39,12 @@
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mesaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblcamposregistraduriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.scrappmindDataSet = new ScrappmindAg.ScrappmindDataSet();
+            this.tblcampos_registraduriaTableAdapter = new ScrappmindAg.ScrappmindDataSetTableAdapters.tblcampos_registraduriaTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scrappmindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblcamposregistraduriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scrappmindDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -67,21 +67,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(693, 438);
             this.dataGridView1.TabIndex = 0;
+            
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
-            // 
-            // scrappmindDataSet
-            // 
-            this.scrappmindDataSet.DataSetName = "ScrappmindDataSet";
-            this.scrappmindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblcamposregistraduriaBindingSource
-            // 
-            this.tblcamposregistraduriaBindingSource.DataMember = "tblcampos_registraduria";
-            this.tblcamposregistraduriaBindingSource.DataSource = this.scrappmindDataSet;
-            // 
-            // tblcampos_registraduriaTableAdapter
-            // 
-            this.tblcampos_registraduriaTableAdapter.ClearBeforeFill = true;
             // 
             // codcedDataGridViewTextBoxColumn
             // 
@@ -138,6 +125,20 @@
             this.fechaactDataGridViewTextBoxColumn.HeaderText = "fechaact";
             this.fechaactDataGridViewTextBoxColumn.Name = "fechaactDataGridViewTextBoxColumn";
             // 
+            // tblcamposregistraduriaBindingSource
+            // 
+            this.tblcamposregistraduriaBindingSource.DataMember = "tblcampos_registraduria";
+            this.tblcamposregistraduriaBindingSource.DataSource = this.scrappmindDataSet;
+            // 
+            // scrappmindDataSet
+            // 
+            this.scrappmindDataSet.DataSetName = "ScrappmindDataSet";
+            this.scrappmindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblcampos_registraduriaTableAdapter
+            // 
+            this.tblcampos_registraduriaTableAdapter.ClearBeforeFill = true;
+            // 
             // Reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,8 +149,8 @@
             this.Text = "Reporte";
             this.Load += new System.EventHandler(this.Reporte_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scrappmindDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblcamposregistraduriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scrappmindDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

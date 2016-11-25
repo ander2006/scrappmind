@@ -63,7 +63,57 @@ namespace CAD
             //
 
         }
+        public void Buscar_usuario(DTOUsuario user)
+        {
+            SqlCommand cmd = new SqlCommand(); // sentencias sql
+            cmd.Connection = con;
+            cmd.CommandText = "prc_BuscarUsuario";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@cedula","1035417284");
+            con.Open();
+
+            SqlDataReader sdr = cmd.ExecuteReader();
+
+            if (sdr.Read())
+            {
+                
+                user.Usuario = sdr["usuario"].ToString();
+                user.Clave = sdr["contrasena"].ToString();
+
+            }
+
+            //cerrar conexiòn
+            con.Close();
+            //  
+
+        }
+
+        public void EditarUsuario(DTOUsuario user)
+        {
+            SqlCommand cmd = new SqlCommand(); // sentencias sql
+            cmd.Connection = con;
+            cmd.CommandText = "prcActualizarPersona";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@cedula", user.Cedula);
+            cmd.Parameters.AddWithValue("@usuario", user.Usuario);
+            cmd.Parameters.AddWithValue("@contrasena", user.Clave);
+            cmd.Parameters.AddWithValue("@administrador", user.Administrador);
+            cmd.Parameters.AddWithValue("@operativo", user.Operativo);
+
+
+
+            con.Open();
+
+
+            cmd.ExecuteNonQuery();
+            //cerrar conexiòn
+            con.Close();
+            //
+
+        }
 
     }
-   }
+
+
+}
 

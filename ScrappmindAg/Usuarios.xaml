@@ -12,33 +12,32 @@
 
         <DataGrid x:Name="dataGrid" ItemsSource="{Binding Path=Albums}" Margin="402,111,0,-45"
                   AutoGenerateColumns="True"
-                  Style="{StaticResource AzureDataGrid}" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="455" Width="602" BorderBrush="{x:Null}" Foreground="White" GridLinesVisibility="All" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="Black" HeadersVisibility="All" Background="{x:Null}" >
+                  Style="{StaticResource AzureDataGrid}" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="455" Width="602" BorderBrush="{x:Null}" Foreground="White" GridLinesVisibility="All" HorizontalGridLinesBrush="Black" VerticalGridLinesBrush="Black" HeadersVisibility="All" Background="{x:Null}" MouseDoubleClick="dataGrid_MouseDoubleClick" CellEditEnding="dataGrid_CellEditEnding" >
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn ElementStyle="{DynamicResource MetroDataGridCheckBox}"
-                                        EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
-                                        Header="Seleccion"
-                                        Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=IsSelected, Mode=OneWay}"
-                                        />
+
+
             </DataGrid.Columns>
         </DataGrid>
         <Label x:Name="label" Content="Usuarios" HorizontalAlignment="Left" Margin="645,20,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
-        <Controls:Tile Height="Auto" Margin="27,111,723,295" Width="Auto" Title="Agregar Usuario" TitleFontSize="12" Click="Tile_Click_1" >
+        <Controls:Tile Height="Auto" Margin="27,100,723,306" Width="Auto" Title="Agregar Usuario" TitleFontSize="12" Click="Tile_Click_1" >
             <Image Source="image\User-Add.png" Width="72" Height="73"/>
         </Controls:Tile>
-        <Controls:Tile Height="Auto" Margin="27,242,861,164" Width="Auto" Title="Editar Usuario" TitleFontSize="12" >
+        <Controls:Tile Height="Auto" Margin="27,238,861,168" Width="Auto" Title="Editar Usuario" TitleFontSize="12" Click="Tile_Click_3" >
             <Image Source="image/User-Modify.png" Width="72" Height="73"/>
         </Controls:Tile>
-        <Controls:Tile Height="Auto" Margin="165,242,723,164" Width="Auto" Title="Eliminar Usuario" TitleFontSize="12" >
+        <Controls:Tile Height="Auto" Margin="165,238,723,168" Width="Auto" Title="Eliminar Usuario" TitleFontSize="12" Click="Tile_Click_4" >
             <Image Source="image/User-Delete.png" Width="72" Height="73"/>
-        </Controls:Tile>
-        <Controls:Tile Height="Auto" Margin="27,376,723,30" Width="Auto" Title="Listar Usuario" TitleFontSize="12" Click="Tile_Click" >
-            <Image Source="image/Group-Add.png" Width="72" Height="73"/>
         </Controls:Tile>
         <Controls:Tile Height="Auto" Margin="896,20,49,437" Width="Auto" Title="Volver" TitleFontSize="12" Click="Tile_Click_2" >
             <Image Source="image/In.png" Width="48" Height="54"/>
         </Controls:Tile>
-
-
+        <TextBox x:Name="txtbuscar" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Buscar" HorizontalAlignment="Left" Height="20" Margin="27,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221"/>
+        <Controls:Tile Height="Auto" Margin="267,60,718,435" Width="Auto" Title="" TitleFontSize="12" Click="Tile_Click_5"  >
+            <Image Source="image/find.png" Width="30" Height="22"/>
+        </Controls:Tile>
+        <Controls:Tile Height="Auto" Margin="27,377,723,29" Width="Auto" Title="listar Usuario" TitleFontSize="12" Click="Tile_Click_6">
+            <Image Source="image/User-profile.png" Width="72" Height="73"/>
+        </Controls:Tile>
         <Controls:Flyout x:Name="Flyoutusuario" Width="320" Header="Registrar Usuario">
             <Canvas>
                 <Image Source="image/User-Add.png" Canvas.Left="92" Canvas.Top="10" Height="112" Width="115"></Image>
@@ -54,6 +53,38 @@
                 <SolidColorBrush Color="#FF2B2B2B" Opacity="0.9"/>
             </Controls:Flyout.Background>
         </Controls:Flyout>
+
+        <Controls:Flyout x:Name="FlyoutEditUsuario" Width="320" Header="Editar Usuario">
+            <Canvas>
+                <Image Source="image/User-Modify.png" Canvas.Left="92" Canvas.Top="10" Height="112" Width="115"></Image>
+                <TextBox x:Name="txtUsuarioE" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese usuario" Height="23" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="127" Width="229"/>
+                <TextBox x:Name="txtContrasenaE" Controls:TextBoxHelper.ClearTextButton="True"  Controls:TextBoxHelper.Watermark="Ingrese Contraseña" Canvas.Left="40" Canvas.Top="176" Width="229"/>
+                <TextBox x:Name="txtCedulaE" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Cedula" Height="23" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="224" Width="229"/>
+                <RadioButton x:Name="RadiooperativoE" Content="Operativo" Canvas.Left="179" Canvas.Top="271"/>
+                <RadioButton x:Name="RadioAdministradorE" Content="Administrador" Canvas.Left="40" Canvas.Top="271"/>
+                <Button x:Name="btnEditar" Content="Editar" Canvas.Left="40" Canvas.Top="321" Width="229" Click="btnEditar_Click"/>
+
+            </Canvas>
+            <Controls:Flyout.Background>
+                <SolidColorBrush Color="#FF2B2B2B" Opacity="0.9"/>
+            </Controls:Flyout.Background>
+        </Controls:Flyout>
+        <Controls:Flyout x:Name="FlyoutEliminarusurio" Width="320" Header="Eliminar Usuario">
+            <Canvas>
+                <Image Source="image/User-delete.png" Canvas.Left="92" Canvas.Top="10" Height="112" Width="115"></Image>
+                <TextBox x:Name="txtUsuarioD" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese usuario" Height="23" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="127" Width="229"/>
+                <TextBox x:Name="txtContrasenaD" Controls:TextBoxHelper.ClearTextButton="True"  Controls:TextBoxHelper.Watermark="Ingrese Contraseña" Canvas.Left="40" Canvas.Top="176" Width="229"/>
+                <TextBox x:Name="txtCedulaD" Controls:TextBoxHelper.ClearTextButton="True" Controls:TextBoxHelper.Watermark="Ingrese Cedula" Height="23" Canvas.Left="40" TextWrapping="Wrap" Canvas.Top="224" Width="229"/>
+                <RadioButton x:Name="RadiooperativoD" Content="Operativo" Canvas.Left="179" Canvas.Top="271"/>
+                <RadioButton x:Name="RadioAdministradorD" Content="Administrador" Canvas.Left="40" Canvas.Top="271"/>
+                <Button x:Name="btnEliminar" Content="Eliminar" Canvas.Left="40" Canvas.Top="321" Width="229" Click="btnEliminar_Click" />
+
+            </Canvas>
+            <Controls:Flyout.Background>
+                <SolidColorBrush Color="#FF2B2B2B" Opacity="0.9"/>
+            </Controls:Flyout.Background>
+        </Controls:Flyout>
+        
 
 
     </Grid>
