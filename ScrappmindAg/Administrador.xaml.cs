@@ -88,13 +88,13 @@ namespace ScrappmindAg
 
 
 
-                String Registraduria = "https://wsp.registraduria.gov.co/censo/_censoResultado.php";
+                String Registraduria = "https://wsp.registraduria.gov.co/censo/_censoResultado.php"; 
 
 
                 (Host.Child as System.Windows.Forms.WebBrowser).Navigate(Registraduria);
                 (Host.Child as System.Windows.Forms.WebBrowser).ScriptErrorsSuppressed = true;
 
-                ESPERA(4000);
+                ESPERA(9000);
 
                 string cedula = line;
 

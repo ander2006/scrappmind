@@ -143,11 +143,8 @@ namespace ScrappmindAg
             CADUsuario datocamp = new CADUsuario();
             datocamp.ingresarUsuario(adm);
 
-            this.Hide();
-            Usuarios ventana = new Usuarios();
-
-            ventana.Show();
-
+           
+            Tile_Click_6(sender, e);
         }
 
       
@@ -204,11 +201,11 @@ namespace ScrappmindAg
 
                 //cerrar conexiòn
                 con.Close();
+                Tile_Click_6(sender, e);
 
 
-            
 
-        }
+            }
             else { 
             FlyoutEditUsuario.IsOpen = true;
 
@@ -308,10 +305,7 @@ namespace ScrappmindAg
             CADUsuario datocamp = new CADUsuario();
             datocamp.EditarUsuario(adm);
 
-            this.Hide();
-            Usuarios ventana = new Usuarios();
-
-            ventana.Show();
+            Tile_Click_6(sender, e);
         }
 
         private void Tile_Click_3(object sender, RoutedEventArgs e)
@@ -342,10 +336,7 @@ namespace ScrappmindAg
             //cerrar conexiòn
             con.Close();
 
-            this.Hide();
-            Usuarios ventana = new Usuarios();
-
-            ventana.Show();
+            Tile_Click_6(sender, e);
             //
         }
 
@@ -377,7 +368,7 @@ namespace ScrappmindAg
 
         }
 
-        private void Tile_Click_6(object sender, RoutedEventArgs e)
+        public void Tile_Click_6(object sender, RoutedEventArgs e)
         {
             SqlCommand cmd = new SqlCommand(); // sentencias sql
             cmd.Connection = con;
